@@ -1,42 +1,13 @@
-/**
- * Created by coskudemirhan on 24/06/16.
- */
-$(document).ready(function () {
-
-    var searchForm = $('#searchform');
-    var input = $('input[name="username"]');
-    var result = $('.search-result');
-
-    searchForm.submit(function (e) {
-        e.preventDefault()
-        hide_containers()
-        $.getJSON('https://crossorigin.me/http://www.last.fm/player/station/user/' + input.val() + '/recommended?ajax=1')
+$('#searchform').submit(function (e) {
+    e.preventDefault()
+    hide_containers()
+    $.getJSON('https://crossorigin.me/http://www.last.fm/player/station/user/' + $('input[name="username"]').val() + '/recommended?ajax=1')
             .done(process)
             .fail(function () {
                 $('#error-message').html('<p>Error fetching your data. This may be due wrong username or api connection error.</p><p>Please refresh the page and try again</p>').show()
                 $('#message-container').fadeIn('fast')
             })
-    });
-
-    var timer;
-    input.on('keyup', function () {
-        clearTimeout(timer);
-        timer = setTimeout(function () {
-            if (input.val().length > 2)
-                searchForm.submit();
-        }, 500);
-    });
-
-
-    input.on('keydown', function () {
-        clearTimeout(timer);
-    });
-
-    result.click(function () {
-        result.select();
-    });
 });
-
 
 var process = function (data) {
     var links = []

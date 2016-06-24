@@ -16,86 +16,14 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css">
-
+    <link rel="stylesheet" type="text/css"
+          href="a/css/style.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <style type="text/css">
-        body {
-            padding-top: 50px;
-        }
-
-        .header-container {
-            padding: 40px 15px;
-            text-align: center;
-        }
-
-        /* Sticky footer styles
-    -------------------------------------------------- */
-
-        html {
-            position: relative;
-            min-height: 100%;
-        }
-
-        body {
-            /* Margin bottom by footer height */
-
-            margin-bottom: 60px;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            /* Set the fixed height of the footer here */
-
-            min-height: 60px;
-            background-color: #f5f5f5;
-        }
-
-        .footer div.container {
-            padding-bottom: 5px;
-        }
-
-        .container {
-            width: auto;
-            max-width: 50%;
-            padding: 0 15px;
-        }
-
-        .container .text-muted {
-            margin: 20px 0;
-        }
-
-        #message-container {
-            margin-top: 20px;
-        }
-
-        .fa-lastfm {
-            color: #c3000d;
-        }
-
-        .fa-spotify {
-            color: #7ab800;
-        }
-
-        .devicons-javascript {
-            color: #FAC552;
-        }
-
-        .fa-lastfm, .fa-spotify, .devicons-javascript {
-            vertical-align: middle;
-        }
-
-        textarea {
-            min-height: 200px;
-        }
-    </style>
 
 </head>
 
@@ -104,7 +32,7 @@
 
 <div class="container">
 
-    <div class="header-container">
+    <div id="header-container">
         <h1>Recommendify</h1>
         <p class="lead">Use this tool to make a playlist for Spotify from your Last.fm recommendations</p>
     </div>
@@ -119,7 +47,7 @@
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
                         <input name="username" type="text" class="search-query form-control"
-                               placeholder="Type your Last.fm Username for Recommended songs playlists and press enter"/>
+                               placeholder="Type your Last.fm Username for Recommended songs playlists and press enter" autocomplete="off"/>
                             <span class="input-group-btn">
                   <button class="btn btn-danger" type="submit">
                       <span class="glyphicon glyphicon-search"></span>
@@ -137,7 +65,7 @@
             <p><a id="result-link" href="">Click this link</a> to add the songs to the Spotify.</p>
             <p>Alternatively, you can also copy the code below to your clipboard and pase into a blank playlist in
                 Spotify.</p>
-            <textarea onclick="this.select()" class="form-control" id="result-textarea"></textarea>
+            <textarea class="form-control search-result" id="result-textarea"></textarea>
         </div>
 
         <div rel="container" id="message-container" class="row" style="display:none">
@@ -172,47 +100,7 @@
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
 
-
-<script type="text/javascript">
-    $('#searchform').submit(function (e) {
-        e.preventDefault()
-        hide_containers()
-        $.getJSON('https://crossorigin.me/http://www.last.fm/player/station/user/' + $('input[name="username"]').val() + '/recommended?ajax=1')
-                .done(process)
-                .fail(function () {
-                    $('#error-message').html('<p>Error fetching your data. This may be due wrong username or api connection error.</p><p>Please refresh the page and try again</p>').show()
-                    $('#message-container').fadeIn('fast')
-                })
-    });
-
-    var process = function (data) {
-        var links = []
-        for (i = 0; i < data.playlist.length; i++) {
-            var hasSpotify = false;
-            for (j = 0; j < data.playlist[i].playlinks.length; j++) {
-                if (data.playlist[i].playlinks[j].affiliate == 'spotify') {
-                    links.push(data.playlist[i].playlinks[j].id)
-                    hasSpotify = true;
-                    break;
-                }
-            }
-            if (!hasSpotify) {
-                continue
-            }
-        }
-
-        $('#result-link').attr('href', 'spotify:trackset:Playlist:' + links.join(','))
-        $('#result-textarea').val($.map(links, function (link, index) {
-            return 'spotify:track:' + link
-        }).join('\n'))
-        $('#result-container').fadeIn('fast')
-    }
-
-    var hide_containers = function () {
-        $('div[rel="alert"], div[rel="container"]').hide()
-    }
-</script>
-
+<script type="text/javascript" src="a/js/app.js"></script>
 
 </body>
 

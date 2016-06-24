@@ -39,7 +39,7 @@
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
                         <input name="username" type="text" class="search-query form-control"
-                               placeholder="Type your Last.fm Username for Recommended songs playlists and press enter"/>
+                               placeholder="Type your Last.fm Username for Recommended songs playlists and wait or press enter"/>
                         <span class="input-group-btn">
                           <button class="btn btn-danger" type="submit">
                                 <span class="glyphicon glyphicon-search"></span>
@@ -55,7 +55,7 @@
             <p><a id="result-link" href="">Click this link</a> to add the songs to the Spotify.</p>
             <p>Alternatively, you can also copy the code below to your clipboard and pase into a blank playlist in
                 Spotify.</p>
-            <textarea onclick="this.select()" class="form-control" id="result-textarea"></textarea>
+            <textarea class="form-control search-result" id="result-textarea"></textarea>
         </div>
 
         <div rel="container" id="message-container" class="row" style="display:none">
@@ -66,16 +66,20 @@
 
 <footer class="footer">
     <div class="container">
-        <div class="col-md-12 text-left navbar-text" style="display:table">
+        <div class="col-md-8 text-left navbar-text" style="display:table">
             <span>
-              Made with <i class="fa fa-coffee" aria-hidden="true"></i> by <a href="https://github.com/ardakilic">Arda Kılıçdağı</a>. Powered by</span>
+              Made with <i class="fa fa-coffee" aria-hidden="true"></i> by <a href="https://github.com/ardakilic">Arda Kılıçdağı</a>. Powered by
             <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><i
                     class="devicons devicons-javascript fa-2x" aria-hidden="true"></i></a>, <a href="https://last.fm"
                                                                                                target="_blank"><i
-                class="fa fa-lastfm fa-2x" aria-hidden="true"></i></a> and <a href="https://www.spotify.com"
-                                                                              target="_blank"><i
-                class="fa fa-spotify fa-2x" aria-hidden="true"></i></a>
+                    class="fa fa-lastfm fa-2x" aria-hidden="true"></i></a> and <a href="https://www.spotify.com"
+                                                                                  target="_blank"><i
+                    class="fa fa-spotify fa-2x" aria-hidden="true"></i></a>
             </span>
+        </div>
+        <div class="col-md-3 text-right navbar-text">
+            <span>Contribute on <a href="https://last.fm"><i
+                    class="fa fa-github fa-2x" aria-hidden="true"></i></a></span>
         </div>
     </div>
 </footer>

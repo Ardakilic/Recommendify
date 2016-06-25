@@ -1,14 +1,14 @@
 'use strict'
 
-const gulp = require('gulp')
-const sass = require('gulp-sass')
-const nano = require('gulp-cssnano')
-const uglify = require('gulp-uglify')
-const del = require('del')
+const gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    nano = require('gulp-cssnano'),
+    uglify = require('gulp-uglify'),
+    del = require('del')
 
 
 gulp.task('clear', function () {
-    del('./dist');
+    del('./dist')
 })
 
 gulp.task('sass', function () {

@@ -37,8 +37,6 @@ $ gulp
 
 ## Thanks
 * [CrossOrigin](https://crossorigin.me/) to prevent CORS on the client side
-* @smtaydemir for bootstrapping the page
-* @demirhancosku for the auto search feature
 * [And all other contributors](https://github.com/Ardakilic/Recommendify/graphs/contributors)
 
 

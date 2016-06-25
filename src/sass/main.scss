@@ -28,6 +28,10 @@ textarea {
   }
 }
 
+.fa-coffee {
+  color: #964B00;
+}
+
 .fa-github {
   color: #333;
 }
@@ -58,10 +62,14 @@ textarea {
     margin: 15px 0;
     text-align: center;
 
-    @media only(min-width: 768px) { text-align:left; }
+    @media only (min-width: 768px) {
+      text-align: left;
+    }
 
     &.pull-right {
-      @media only(min-width: 768px) { text-align:right; }
+      @media only (min-width: 768px) {
+        text-align: right;
+      }
     }
   }
 }

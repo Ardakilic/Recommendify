@@ -18,12 +18,10 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./dist/css'))
 })
 
-
 gulp.task('js', function () {
     return gulp.src('src/js/app.js')
         .pipe(uglify())
         .pipe(gulp.dest('./dist/js'))
 })
-
 
 gulp.task('default', ['clear', 'sass', 'js'])

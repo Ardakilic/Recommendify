@@ -29,27 +29,36 @@
 
     <div id="header-container">
         <h1>Recommendify</h1>
-        <p class="lead">Use this tool to make a playlist for Spotify from your Last.fm recommendations</p>
+        <p class="lead">Use this tool to make a playlist for Spotify from your Last.fm recommendations, Band name or Tag (genre)</p>
     </div>
 
 
     <div class="col-md-12">
-        <div class="row">
-            <form id="searchform">
-                <div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                        <input name="username" type="text" class="search-query form-control"
-                               placeholder="Type your Last.fm Username for Recommended songs playlists and wait or press enter"/>
-                        <span class="input-group-btn">
-                          <button class="btn btn-danger" type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
-                          </button>
-                        </span>
-                    </div>
+        <form id="searchform">
+            <div class="form-group">
+                <label>Your Last.fm Username, Artist name or Tag</label>
+                <div class="input-group">
+                    <input type="text" name="username" class="form-control" placeholder="Username, Artist or Tag">
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
                 </div>
-            </form>
-        </div>
-
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label>The method for the generated playlist</label>
+                    <select name="method" class="form-control">
+                        <option value="recommendation">User's Recommendations</option>
+                        <option value="mix">User's Mix</option>
+                        <option value="library">User's Library</option>
+                        <option value="artist">Artist's Radio</option>
+                        <option value="artist">Tag's Radio</option>
+                    </select>
+                </div>
+            </div>
+        </form>
         <div id="result-container" rel="container" class="row" style="display:none">
             <h2>Success!</h2>
             <p><a id="result-link" href="">Click this link</a> to add the songs to the Spotify.</p>
@@ -91,10 +100,10 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="dist/js/app.js"></script>
 </body>
 </html>

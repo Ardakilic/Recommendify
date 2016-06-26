@@ -8,12 +8,21 @@
 var searchForm = $('#searchform')
 var input = $('input[name="username"]')
 var result = $('.search-result')
+var select = $('select[name="method"]')
 
+const corsProxy = 'https://crossorigin.me/' //'http://cors.io/?u=' as alternative
+const endpoints = {
+    recommendation: 'http://www.last.fm/player/station/user/[INPUT]/recommended?ajax=1',
+    mix: 'http://www.last.fm/player/station/user/[INPUT]/mix?ajax=1',
+    library: 'http://www.last.fm/player/station/user/[INPUT]/library?ajax=1',
+    artist: 'http://www.last.fm/player/station/music/[INPUT]?ajax=1',
+    tag: 'http://www.last.fm/player/station/tag/[INPUT]?ajax=1'
+}
 
 searchForm.submit(function (e) {
     e.preventDefault()
     hideContainers()
-    $.getJSON('https://crossorigin.me/http://www.last.fm/player/station/user/' + input.val() + '/recommended?ajax=1')
+    $.getJSON(corsProxy + endpoints[select.val()].replace('[INPUT]', encodeURIComponent(input.val())))
         .done(process)
         .fail(function () {
             $('#error-message').html('<p>Error fetching your data. This may be due wrong username or api connection error.</p><p>Please refresh the page and try again</p>').show()

@@ -21,6 +21,12 @@ textarea {
   margin-top: 20px;
 }
 
+#searchform {
+  .input-group {
+    width: 100%;
+  }
+}
+
 .container {
   padding: 0 15px;
   .text-muted {
@@ -48,7 +54,7 @@ textarea {
   color: #FAC552;
 }
 
-.fa-lastfm, .fa-spotify, .devicons-javascript {
+.fa-github, .fa-lastfm, .fa-spotify, .devicons-javascript {
   vertical-align: middle;
 }
 

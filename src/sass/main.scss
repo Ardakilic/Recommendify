@@ -10,6 +10,13 @@ body {
 
 textarea {
   min-height: 200px;
+  height: 100% !important;
+}
+
+iframe {
+  display: block;
+  width: 100% !important;
+  height: inherit !important;
 }
 
 #header-container {
@@ -32,6 +39,25 @@ textarea {
   .text-muted {
     margin: 20px 0;
   }
+}
+
+.flex-row {
+  //display: -webkit-flex;
+  //display: inline-flex;
+  height: 450px;
+  //flex-wrap: wrap;
+  display: table;
+  width: 100%;
+}
+
+.flex-col {
+  //-webkit-flex: 1;
+  //-ms-flex: 1;
+  //flex: 1;
+  height: inherit;
+  min-width: 300px;
+  //display: table-cell;
+  margin: 20px 0 20px 0;
 }
 
 .fa-coffee {

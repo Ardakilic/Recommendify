@@ -64,7 +64,9 @@ var process = function (data) {
         }
     }
 
-    $('#result-link').attr('href', 'spotify:trackset:Playlist:' + links.join(','))
+    $('#result-iframe').attr('src', 'https://embed.spotify.com/?uri=spotify:trackset:Recommendify:' + links.join(',')).load()
+    $('#result-link-trackset').attr('href', 'spotify:trackset:Recommendify:' + links.join(','))
+    $('#result-link-openplayer').attr('href', 'https://open.spotify.com/trackset/Recommendify/' + links.join(','))
     $('#result-textarea').val($.map(links, function (link, index) {
         return 'spotify:track:' + link
     }).join('\n'))

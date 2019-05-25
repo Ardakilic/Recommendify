@@ -1,6 +1,6 @@
 {
   "name": "recommendify",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A service that makes Spotify playlists from Last.fm user recommendations",
   "main": "index.js",
   "scripts": {
@@ -17,10 +17,16 @@
   },
   "homepage": "https://github.com/Ardakilic/Recommendify#readme",
   "devDependencies": {
-    "del": "^2.2.1",
-    "gulp": "^3.9.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^1.5.4"
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "cssnano": "^4.1.10",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "uglify-es": "^3.3.9",
+    "readable-stream": "^3.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
   }
 }

@@ -26,7 +26,7 @@ There's a service called [Spotibot](http://www.spotibot.com) which generates the
 
 **The new version should do everything Spotibot Offers from official Last.fm api. The tracklist is fetched directly from Last.fm along with Spotify URLs**
 
-## Screenshots
+## Screenshots 
 
 ![Recommendify](https://i.imgur.com/G5V33ad.png)
 

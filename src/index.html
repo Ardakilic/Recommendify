@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recommendify</title>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+
+<div class="container">
+  <div id="header-container">
+    <h1>Recommendify</h1>
+    <p class="lead">Use this tool to make a playlist for Spotify from your Last.fm recommendations, Band name or Tag (genre)</p>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form id="searchform">
+        <div class="form-group">
+          <label>Your Last.fm Username, Artist name or Tag</label>
+          <div class="input-group">
+            <input type="text" name="username" class="form-control" placeholder="Username, Artist or Tag">
+            <span class="input-group-btn">
+              <button class="btn btn-danger" type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>The method for the generated playlist</label>
+          <select name="method" class="form-control">
+            <option value="recommendation">User's Recommendations</option>
+            <option value="mix">User's Mix</option>
+            <option value="library">User's Library</option>
+            <option value="artist">Artist's Radio</option>
+            <option value="tag">Tag's Radio</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div id="result-container" rel="container" class="col-md-12" style="display:none">
+      <h2>Success!</h2>
+      <p><a id="result-link-openplayer" href="" target="_blank">Click this link</a> or <a id="result-link-trackset" href="">this one</a> to add the songs to the Spotify Play Queue.</p>
+      <p>Alternatively, you can also copy the code below to your clipboard and pase into a blank playlist in
+        Spotify.</p>
+      <p>You can play the songs from this embedded player directly from the first column. Alternatively, you can also copy and paste the contents at the second column's text area to a playlist in Spotify.</p>
+      <div class="flex-row">
+        <div class="col-md-6 flex-col">
+          <iframe src="" frameborder="0" allowtransparency="true" id="result-iframe"></iframe>
+        </div>
+        <div class="col-md-6 flex-col">
+          <textarea class="form-control search-result" id="result-textarea"></textarea>
+        </div>
+      </div>
+    </div>
+    <div rel="container" id="message-container" class="col-md-12" style="display:none">
+      <div class="alert alert-danger" rel="alert" id="error-message"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <p>Made with <i class="fa fa-coffee" aria-hidden="true"></i> by
+          <a href="https://arda.pw" target="_blank">Arda Kılıçdağı</a>.
+        </p>
+        <p>
+          Powered by
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+            <i class="fab fa-js fa-2x" aria-hidden="true"></i>
+          </a>,
+          <a href="https://last.fm" target="_blank">
+            <i class="fab fa-lastfm fa-2x" aria-hidden="true"></i>
+          </a> and
+          <a href="https://www.spotify.com" target="_blank">
+            <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+          </a>
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-3 pull-right">
+        <p>Contribute on <a href="https://github.com/Ardakilic/Recommendify"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>

@@ -24,7 +24,7 @@ gulp.task('js', async () => pipeline(
   gulp.dest('./dist/js')
 ));
 
-gulp.task('html', async () => gulp.src('./index.html')
+gulp.task('html', async () => gulp.src('./src/index.html')
   .pipe(gulp.dest('./dist')));
 
 gulp.task('default', gulp.series('clear', 'sass', 'js', 'html'));

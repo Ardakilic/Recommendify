@@ -15,7 +15,6 @@ const getSpotifySongs = async (request, app) => {
         data: response.data,
       };
     }
-    console.log(response);
     return {
       success: false,
       status: 403,

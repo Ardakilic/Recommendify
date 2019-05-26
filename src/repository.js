@@ -20,11 +20,19 @@ const lastFmResources = {
 
 // The method to fetch playlist raw data
 const fetchPlaylist = async (username, password, playlistLink) => {
+  // These parameters will initialize the browser properly.
+  let browserParameters = {};
   // root user cannot be used in sandbox mode.
   // This is a workaround to make it work even with root user
-  const browser = await puppeteer.launch(
-    os.userInfo().username === 'root' ? { args: ['--no-sandbox'] } : {}
-  );
+  if (os.userInfo().username === 'root') {
+    browserParameters = { args: ['--no-sandbox'] };
+  }
+  // If the app is running on Heroku, puppeteer needs additional parameters
+  if (process.env.HEROKU !== undefined && process.env.HEROKU === true) {
+    browserParameters = { args: ['--no-sandbox', '--disable-setuid-sandbox'] };
+  }
+
+  const browser = await puppeteer.launch(browserParameters);
   const page = await browser.newPage();
   await page.goto(lastFmResources.loginFormURL, { waitUntil: 'load', timeout: 0 });
   await page.type(lastFmResources.usernameField, username);

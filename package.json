@@ -2,8 +2,9 @@
   "name": "recommendify",
   "version": "2.0.0",
   "description": "A service that makes Spotify playlists from Last.fm data",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,8 +18,9 @@
   },
   "homepage": "https://github.com/Ardakilic/Recommendify#readme",
   "dependencies": {
-    "express": "^4.17.0",
     "body-parser": "^1.19.0",
+    "express": "^4.17.0",
+    "express-promise-router": "^3.0.3",
     "puppeteer": "^1.17.0"
   },
   "devDependencies": {

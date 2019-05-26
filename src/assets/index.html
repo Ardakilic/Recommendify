@@ -17,7 +17,7 @@
 
 <div class="container">
   <div id="header-container">
-    <h1>Recommendify</h1>
+    <h1>Recommendify<sup>2</sup></h1>
     <p class="lead">Use this tool to make a playlist for Spotify from your Last.fm recommendations, Band name or Tag (genre)</p>
   </div>
   <div class="row">
@@ -44,21 +44,35 @@
             <option value="tag">Tag's Radio</option>
           </select>
         </div>
+        <div class="form-group">
+          <label>Your Last.fm Credentials <i class="fas fa-question-circle" data-trigger="hover focus" data-container="body" data-toggle="popover" data-placement="right" data-content="Sadly, Last.fm now does not provide Spotify songs on playlists unless you're a Spotify premium subscriber and logged in. To achieve the Spotify songs, we need credentials of a Last.fm user who's connected a Spotify Premium account to fetch the playlists. These credentials are never stored!"></i></label>
+          <input type="text" name="lastfm_username" class="form-control mb-2" placeholder="Your Last.fm Username who's connected a Spotify Premium account">
+          <input type="password" name="lastfm_password" class="form-control" placeholder="Your Last.fm Password">
+          <small class="form-text text-muted">Your credentials are to fetch the playlist data, and they're NEVER stored!</small>
+        </div>
       </form>
     </div>
     <div id="result-container" rel="container" class="col-md-12" style="display:none">
       <h2>Success!</h2>
-      <p><a id="result-link-openplayer" href="" target="_blank">Click this link</a> or <a id="result-link-trackset" href="">this one</a> to add the songs to the Spotify Play Queue.</p>
-      <p>Alternatively, you can also copy the code below to your clipboard and pase into a blank playlist in
-        Spotify.</p>
-      <p>You can play the songs from this embedded player directly from the first column. Alternatively, you can also copy and paste the contents at the second column's text area to a playlist in Spotify.</p>
-      <div class="flex-row">
-        <div class="col-md-6 flex-col">
-          <iframe src="" frameborder="0" allowtransparency="true" id="result-iframe"></iframe>
-        </div>
-        <div class="col-md-6 flex-col">
+      <p>Copy the data below to your clipboard, then Open your Spotify client, and paste the content into the playlist directly. You'll see the new songs will be added to your playlist. You can repeat the fetching and get new recommendations, and thus, can create longer playlists.</p>
+      <div class="row">
+        <div class="col-md-6">
           <textarea class="form-control search-result" id="result-textarea"></textarea>
         </div>
+        <div class="col-md-6">
+          <h3>Donate</h3>
+          <p>If you find this project useful, please consider donating. Every bit helps for my liquid consumation :)</p>
+          <ul id="donation-list">
+            <li>BTC: 1QFHeSrhWWVhmneDBkArKvpmPohRjpf7p6</li>
+            <li>ETH/ERC20: 0x3C2b0AC49257300DaB96dF8b49d254Bb696B3458</li>
+            <li>NEO/NEP5: AYbHEah5Y4J6BV8Y9wkWJY7cCyHQameaHc</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <p>Because <a href="https://developer.spotify.com/documentation/widgets/guides/adding-a-spotify-play-button/#play-button-in-playlists" target="_blank">Spotify killed the trackset feature</a>, I cannot provide embed and direct links anymore. For dynamic playlists, you need to use their API, this is not in my current plans. Also, for a single playlist, getting both last.fm and Spotify authentication would be quite frustrating for the users.</p>
+      </div>
       </div>
     </div>
     <div rel="container" id="message-container" class="col-md-12" style="display:none">
@@ -70,25 +84,32 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-8">
-        <p>Made with <i class="fa fa-coffee" aria-hidden="true"></i> by
+      <div class="col-xs-12 col-sm-6">
+        <p>Made with <i class="fa fa-coffee"></i> by
           <a href="https://arda.pw" target="_blank">Arda Kılıçdağı</a>.
         </p>
         <p>
           Powered by
+          <a href="https://nodejs.org" target="_blank">
+            <i class="fab fa-node-js fa-2x"></i>
+          </a>,
           <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-            <i class="fab fa-js fa-2x" aria-hidden="true"></i>
+            <i class="fab fa-js fa-2x"></i>
           </a>,
           <a href="https://last.fm" target="_blank">
-            <i class="fab fa-lastfm fa-2x" aria-hidden="true"></i>
+            <i class="fab fa-lastfm fa-2x"></i>
           </a> and
           <a href="https://www.spotify.com" target="_blank">
-            <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+            <i class="fab fa-spotify fa-2x"></i>
           </a>
         </p>
       </div>
-      <div class="col-xs-12 col-sm-3 pull-right">
-        <p>Contribute on <a href="https://github.com/Ardakilic/Recommendify"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></p>
+      <div class="col-xs-12 col-sm-6 pull-right">
+        <p>Contribute on
+          <a href="https://github.com/Ardakilic/Recommendify">
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </p>
       </div>
     </div>
   </div>

@@ -13,18 +13,18 @@ gulp.task('clear', async () => {
   await del('./dist');
 });
 
-gulp.task('sass', async () => gulp.src('./src/sass/**/*.scss')
+gulp.task('sass', async () => gulp.src('./src/assets/sass/**/*.scss')
   .pipe(sass())
   .pipe(postcss())
   .pipe(gulp.dest('./dist/css')));
 
 gulp.task('js', async () => pipeline(
-  gulp.src('src/js/app.js'),
+  gulp.src('src/assets/js/app.js'),
   jsMinifier({}),
   gulp.dest('./dist/js')
 ));
 
-gulp.task('html', async () => gulp.src('./src/index.html')
+gulp.task('html', async () => gulp.src('./src/assets/index.html')
   .pipe(gulp.dest('./dist')));
 
 gulp.task('default', gulp.series('clear', 'sass', 'js', 'html'));

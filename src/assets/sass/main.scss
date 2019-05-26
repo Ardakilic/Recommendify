@@ -36,9 +36,11 @@ iframe {
 
 .container {
   padding: 0 15px;
-  .text-muted {
-    margin: 20px 0;
-  }
+}
+
+#donation-list {
+  list-style-type: none;
+  padding-left: 0px;
 }
 
 .flex-row {
@@ -76,11 +78,15 @@ iframe {
   color: #7ab800;
 }
 
-.devicons-javascript {
+.fa-js {
   color: #FAC552;
 }
 
-.fa-github, .fa-lastfm, .fa-spotify, .devicons-javascript {
+.fa-node-js {
+  color: #3C873A;
+}
+
+.fa-github, .fa-lastfm, .fa-spotify, .fa-js, .fa-node-js {
   vertical-align: middle;
 }
 
@@ -94,12 +100,12 @@ iframe {
     margin: 15px 0;
     text-align: center;
 
-    @media only (min-width: 768px) {
+    @media only screen and (min-width: 768px) {
       text-align: left;
     }
 
     &.pull-right {
-      @media only (min-width: 768px) {
+      @media only screen and (min-width: 768px) {
         text-align: right;
       }
     }

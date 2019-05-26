@@ -1,6 +1,6 @@
 {
     "extends": [
-      "airbnb-base"
+      "eser"
     ],
     "env": {
       "node": true

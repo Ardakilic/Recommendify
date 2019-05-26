@@ -47,7 +47,7 @@ It's quite easy to build the application yourself. You need to have `npm` and `g
 
 ```bash
 npm install
-npm run build #or gulp
+npm run build #or run gulp directly
 npm start #or PORT=1234 npm start or PORT=1234 node src/index.js
 ```
 

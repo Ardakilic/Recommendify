@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const routes = require('./routes'); // The app's resources
 
 const router = routerModule();
+
 routes(router, app);
 
 // Express should also serve the compiled static files in the dist folder

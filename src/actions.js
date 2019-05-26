@@ -18,7 +18,7 @@ const getSpotifySongs = async (request, app) => {
     return {
       success: false,
       status: 403,
-      message: 'Could not be fetched from last.fm, please check your credentials and playlist info and try again!',
+      message: JSON.stringify(response), // 'Could not be fetched from last.fm, please check your credentials and playlist info and try again!',
     };
   } catch (error) {
     return {

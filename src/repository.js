@@ -28,7 +28,7 @@ const fetchPlaylist = async (username, password, playlistLink) => {
     browserParameters = { args: ['--no-sandbox'] };
   }
   // If the app is running on Heroku, puppeteer needs additional parameters
-  if (process.env.HEROKU !== undefined && process.env.HEROKU === true) {
+  if (process.env.HEROKU !== undefined && process.env.HEROKU === 'true') {
     browserParameters = { args: ['--no-sandbox', '--disable-setuid-sandbox'] };
   }
 

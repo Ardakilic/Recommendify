@@ -38,6 +38,6 @@
     "eslint-config-eser": "^2.1.1"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=8.0.0"
   }
 }

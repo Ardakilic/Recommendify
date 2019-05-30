@@ -52,7 +52,7 @@ const fetchPlaylist = async (username, password, playlistLink) => {
     // Old version end
     await Promise.all([
         // eslint-disable-next-line no-undef
-        page.evaluate(() => document.querySelector(lastFmResources.submitButton).click()),
+        page.evaluate(submitButton => document.querySelector(submitButton).click(), lastFmResources.submitButton),
         page.waitForNavigation(),
     ]);
 

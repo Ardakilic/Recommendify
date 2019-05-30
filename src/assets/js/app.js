@@ -5,8 +5,7 @@
  * Recommendify
  *
  * Created by Arda Kılıçdağı <https://arda.pw>
- * Cured by Samet Aydemir and Coşku Demirhan
- */
+*/
 
 const searchForm = $('#searchform');
 const result = $('.search-result');

@@ -22,11 +22,17 @@ const lastFmResources = {
 const fetchPlaylist = async (username, password, playlistLink) => {
     // These parameters will initialize the browser properly.
     let browserParameters = {};
+
     // root user cannot be used in sandbox mode.
     // This is a workaround to make it work even with root user
-
     if (os.userInfo().username === 'root') {
         browserParameters = { args: [ '--no-sandbox' ] };
+    }
+
+    // Heroku specific environment to set browser parameters properly.
+    // Simply add HEROKU=true to your heroku environment
+    if (process.env.HEROKU !== undefined && process.env.HEROKU === 'true') {
+        browserParameters = { args: [ '--no-sandbox', '--disable-setuid-sandbox' ] };
     }
 
     const browser = await puppeteer.launch(browserParameters);
@@ -35,13 +41,26 @@ const fetchPlaylist = async (username, password, playlistLink) => {
     await page.goto(lastFmResources.loginFormURL, { waitUntil: 'load', timeout: 0 });
     await page.type(lastFmResources.usernameField, username);
     await page.type(lastFmResources.passwordField, password);
-    await page.click(lastFmResources.submitButton);
-    // await page.waitForNavigation();
+
+    // page.click does not work on this case on Heroku,
+    // that's why we evaluate on browser page directly instead.
+    // Also, the waitForNavigation was having a race condition with click event, so we use Promise.all
+    // Old version start
+    // const waitUntilSubmission = page.waitForNavigation();
+    // await page.click(lastFmResources.submitButton);
+    // await waitUntilSubmission;
+    // Old version end
+    await Promise.all([
+        // eslint-disable-next-line no-undef
+        page.evaluate(() => document.querySelector(lastFmResources.submitButton).click()),
+        page.waitForNavigation(),
+    ]);
+
     const playlist = await page.goto(playlistLink, { waitUntil: 'load', timeout: 0 });
     const playlistData = await playlist.text();
+    // console.log(playlistData);
 
     await browser.close();
-    // console.log(playlistData);
 
     return playlistData;
 };

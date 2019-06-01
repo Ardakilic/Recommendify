@@ -1,13 +1,17 @@
 const puppeteer = require('puppeteer');
 const os = require('os');
 
-// The last.fm playlist paths
+// The last.fm paths
 const paths = {
-    recommendation: 'http://www.last.fm/player/station/user/[INPUT]/recommended?ajax=1',
-    mix: 'http://www.last.fm/player/station/user/[INPUT]/mix?ajax=1',
-    library: 'http://www.last.fm/player/station/user/[INPUT]/library?ajax=1',
-    artist: 'http://www.last.fm/player/station/music/[INPUT]?ajax=1',
-    tag: 'http://www.last.fm/player/station/tag/[INPUT]?ajax=1',
+    playlists: {
+        recommendation: 'http://www.last.fm/player/station/user/[INPUT]/recommended?ajax=1',
+        mix: 'http://www.last.fm/player/station/user/[INPUT]/mix?ajax=1',
+        library: 'http://www.last.fm/player/station/user/[INPUT]/library?ajax=1',
+        artist: 'http://www.last.fm/player/station/music/[INPUT]?ajax=1',
+        tag: 'http://www.last.fm/player/station/tag/[INPUT]?ajax=1',
+    },
+    // The home path of Last.fm after successful lugin
+    loggedInHome: 'https://www.last.fm/home',
 };
 
 // The last.fm login form resources
@@ -56,9 +60,13 @@ const fetchPlaylist = async (username, password, playlistLink) => {
         page.waitForNavigation(),
     ]);
 
+    // ensure user is logged in, Maybe check the current URL ?
+    if (page.url() !== paths.loggedInHome) {
+        throw new Error('Could not log into last.fm');
+    }
+
     const playlist = await page.goto(playlistLink, { waitUntil: 'load', timeout: 0 });
     const playlistData = await playlist.text();
-    // console.log(playlistData);
 
     await browser.close();
 
@@ -82,9 +90,8 @@ const parsePlaylist = (rawPlaylistString) => {
 // The method to serve data back to actions
 const getSpotifySongs = async (user, password, playlistUser, playlistType) => {
     try {
-        const playlistLink = paths[playlistType].replace('[INPUT]', playlistUser);
+        const playlistLink = paths.playlists[playlistType].replace('[INPUT]', playlistUser);
         const rawPlaylistData = await fetchPlaylist(user, password, playlistLink);
-        // console.log(rawPlaylistData);
         const playlistData = parsePlaylist(rawPlaylistData);
 
         return {

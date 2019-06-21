@@ -25,17 +25,17 @@
     "puppeteer": "^1.17.0"
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "del": "^4.1.1",
-    "gulp-postcss": "^8.0.0",
-    "cssnano": "^4.1.10",
-    "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.2",
-    "uglify-es": "^3.3.9",
-    "readable-stream": "^3.3.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-import": "^2.17.3",
-    "eslint-config-eser": "^2.1.1"
+    "gulp": "4.0.2",
+    "del": "4.1.1",
+    "gulp-postcss": "8.0.0",
+    "cssnano": "4.1.10",
+    "gulp-sass": "4.0.2",
+    "gulp-uglify": "3.0.2",
+    "uglify-es": "3.3.9",
+    "readable-stream": "3.4.0",
+    "eslint": "5.16.0",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-config-eser": "2.1.2"
   },
   "engines": {
     "node": ">=8.0.0"

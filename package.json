@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "gulp": "^4.0.2",
-    "del": "^4.1.1",
+    "del": "^5.0.0",
     "gulp-postcss": "^8.0.0",
     "cssnano": "^4.1.10",
     "gulp-sass": "^4.0.2",

@@ -8,6 +8,7 @@ With this tool, you can generate
 * Your or someone else's Last.fm Recommendations
 * Your or someone else's Last.fm Library
 * Your or someone else's Last.fm Mix
+* Your or someone else's Last.fm Obsessions
 * Band (Artist)
 * Tag (Genre)
 
@@ -59,7 +60,7 @@ FAQ
 --------
 
 ### Why does the website ask my last.fm credentials?
-Sadly, last.fm now does not provide Spotify songs on playlists unless you're a Spotify premium subscriber and logged in. To achieve the Spotify songs, we need credentials of a Last.fm user who's connected a Spotify Premium account to fetch the playlists. These credentials are never stored!
+Sadly, last.fm now does not provide Spotify songs on playlists unless you're a Spotify premium subscriber and logged in, and set your default web player as Spotify. To achieve the Spotify songs, we need credentials of a Last.fm user who's connected a Spotify Premium account to fetch the playlists. These credentials are never stored!
 
 ### There was an embed widget and click link on v1, where are they?
 Because [Spotify killed the trackset feature](https://developer.spotify.com/documentation/widgets/guides/adding-a-spotify-play-button/#play-button-in-playlists), last.fm does not provide Spotify embed links anymore. For dynamic playlists, you need to use their API, this is not in my current plans. Also, for a single playlist, getting both last.fm and Spotify authentication would be quite frustrating for the users.

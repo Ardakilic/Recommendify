@@ -7,6 +7,7 @@ const paths = {
         recommendation: 'http://www.last.fm/player/station/user/[INPUT]/recommended?ajax=1',
         mix: 'http://www.last.fm/player/station/user/[INPUT]/mix?ajax=1',
         library: 'http://www.last.fm/player/station/user/[INPUT]/library?ajax=1',
+        obsessions: 'http://www.last.fm/player/station/user/[INPUT]/obsessions?ajax=1',
         artist: 'http://www.last.fm/player/station/music/[INPUT]?ajax=1',
         tag: 'http://www.last.fm/player/station/tag/[INPUT]?ajax=1',
     },

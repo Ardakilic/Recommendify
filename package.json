@@ -21,23 +21,23 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "express-promise-router": "^4.0.0",
-    "puppeteer": "^5.0.0"
+    "express-promise-router": "^4.0.1",
+    "puppeteer": "^5.2.1"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
-    "del": "^5.0.0",
+    "del": "^5.1.0",
     "gulp-postcss": "^8.0.0",
     "cssnano": "^4.1.10",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
     "uglify-es": "^3.3.9",
-    "readable-stream": "^3.3.0",
-    "eslint": "^7.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-config-eser": "^2.1.2"
+    "readable-stream": "^3.6.0",
+    "eslint": "^7.5.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-config-eser": "^2.1.9"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.0.0"
   }
 }

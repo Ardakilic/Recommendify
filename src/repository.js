@@ -18,7 +18,7 @@ const paths = {
 // The last.fm login form resources
 const lastFmResources = {
     loginFormURL: 'https://secure.last.fm/login',
-    usernameField: '#id_username',
+    usernameField: '#id_username_or_email',
     passwordField: '#id_password',
     submitButton: 'button[name="submit"]',
 };

@@ -24,6 +24,7 @@ const lastFmResources = {
 };
 
 // The method to fetch playlist raw data
+// eslint-disable-next-line max-statements
 const fetchPlaylist = async (username, password, playlistLink) => {
     // These parameters will initialize the browser properly.
     let browserParameters = {};
@@ -49,14 +50,15 @@ const fetchPlaylist = async (username, password, playlistLink) => {
 
     // page.click does not work on this case on Heroku,
     // that's why we evaluate on browser page directly instead.
-    // Also, the waitForNavigation was having a race condition with click event, so we use Promise.all
+    // Also, the waitForNavigation was having a race condition with click event,
+    // so we use Promise.all
     // Old version start
     // const waitUntilSubmission = page.waitForNavigation();
     // await page.click(lastFmResources.submitButton);
     // await waitUntilSubmission;
     // Old version end
     await Promise.all([
-        // eslint-disable-next-line no-undef
+        // eslint-disable-next-line no-undef, max-len
         page.evaluate(submitButton => document.querySelector(submitButton).click(), lastFmResources.submitButton),
         page.waitForNavigation(),
     ]);

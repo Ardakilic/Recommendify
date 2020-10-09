@@ -1,6 +1,6 @@
 const actions = require('./actions');
 
-// / Index router is actually a static file (index.html, and other assets), and set at index.js
+// Index router is actually a static file (index.html, and other assets), and set at index.js
 
 module.exports = (router, app) => {
     // AJAX endpoint to fetch the songs data using a headless browser

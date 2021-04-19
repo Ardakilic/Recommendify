@@ -33,7 +33,7 @@
     "gulp-uglify": "^3.0.2",
     "uglify-es": "^3.3.9",
     "readable-stream": "^3.6.0",
-    "eslint": "^7.10.0",
+    "eslint": "^7.11.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-config-eser": "^2.1.9"
   },

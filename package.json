@@ -35,7 +35,7 @@
     "readable-stream": "^3.6.0",
     "eslint": "^7.10.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-config-eser": "^2.1.9"
+    "eslint-config-eser": "^2.2.6"
   },
   "engines": {
     "node": ">=13.0.0"

@@ -29,7 +29,7 @@
     "del": "^6.0.0",
     "gulp-postcss": "^9.0.0",
     "cssnano": "^5.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.2",
     "uglify-es": "^3.3.9",
     "readable-stream": "^3.6.0",

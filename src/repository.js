@@ -10,12 +10,12 @@ const dbg = false;
 // The last.fm paths
 const paths = {
   playlists: {
-    recommendation: 'http://www.last.fm/player/station/user/[INPUT]/recommended?ajax=1',
-    mix: 'http://www.last.fm/player/station/user/[INPUT]/mix?ajax=1',
-    library: 'http://www.last.fm/player/station/user/[INPUT]/library?ajax=1',
-    obsessions: 'http://www.last.fm/player/station/user/[INPUT]/obsessions?ajax=1',
-    artist: 'http://www.last.fm/player/station/music/[INPUT]?ajax=1',
-    tag: 'http://www.last.fm/player/station/tag/[INPUT]?ajax=1',
+    recommendation: 'http://www.last.fm/player/station/user/[INPUT]/recommended',
+    mix: 'http://www.last.fm/player/station/user/[INPUT]/mix',
+    library: 'http://www.last.fm/player/station/user/[INPUT]/library',
+    obsessions: 'http://www.last.fm/player/station/user/[INPUT]/obsessions',
+    artist: 'http://www.last.fm/player/station/music/[INPUT]',
+    tag: 'http://www.last.fm/player/station/tag/[INPUT]',
   },
   // The home path of Last.fm after successful login, we need to dynamically generate this string in the fetchPlaylist function
   loggedIn: '',
@@ -79,8 +79,7 @@ const fetchPlaylist = async (username, password, playlistLink) => {
     throw new Error('Could not log into last.fm');
   }
 
-  const playlist = await page.goto(playlistLink);
-  const playlistData = await playlist.text();
+  const playlistData = await page.goto(playlistLink).text();
 
   await browser.close();
 

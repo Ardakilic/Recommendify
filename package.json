@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/eslint/bin/eslint .",
     "build": "gulp default"
   },
   "repository": {
@@ -19,25 +20,28 @@
   },
   "homepage": "https://github.com/Ardakilic/Recommendify#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "express-promise-router": "^4.0.1",
-    "puppeteer": "^10.0.0"
-  },
-  "devDependencies": {
+    "body-parser": "^1.20.0",
+    "cross-fetch": "^3.1.5",
+    "cssnano": "^5.1.9",
+    "del": "^6.1.0",
+    "esm": "^3.2.25",
+    "express": "^4.18.1",
+    "express-promise-router": "^4.1.1",
     "gulp": "^4.0.2",
-    "del": "^6.0.0",
-    "gulp-postcss": "^9.0.0",
-    "cssnano": "^5.0.0",
-    "gulp-sass": "^5.0.0",
-    "gulp-uglify": "^3.0.2",
-    "uglify-es": "^3.3.9",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "playwright": "^1.22.2",
+    "postcss": "^8.4.14",
     "readable-stream": "^3.6.0",
-    "eslint": "^8.0.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-config-eser": "^2.1.9"
+    "sass": "^1.52.1"
   },
   "engines": {
     "node": ">=13.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2"
   }
 }

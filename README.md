@@ -1,3 +1,9 @@
+TODO in this fork
+---
+* Fix broken formating caused by bootstrap update
+* Lastfm playlists work by fetching ~30 songs at a time, add a "playlist length feature" to fetch more than 30
+* Use spotify api to auto create playlist
+
 Recommendify²
 --------
 

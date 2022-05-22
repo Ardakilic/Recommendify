@@ -74,8 +74,7 @@ const fetchPlaylist = async (username, password, playlistLink) => {
   // Ensure user is logged in. Check if the current url does not include their profile name or if no "alert box" has appeared
   await page.waitForLoadState('domcontentloaded');
 
-  const errorBoxCount = await page.$('.alert');
-  if (page.url() !== paths.loggedIn || errorBoxCount !== null) {
+  if (page.url() !== paths.loggedIn) {
     throw new Error('Could not log into last.fm');
   }
 

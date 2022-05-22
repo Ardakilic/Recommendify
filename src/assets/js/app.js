@@ -1,3 +1,6 @@
+/* eslint-disable prefer-template */
+/* eslint-disable no-undef */
+
 /**
  * Recommendify
  *
@@ -5,9 +8,7 @@
 */
 
 const searchForm = $('#searchform');
-
 const result = $('.search-result');
-
 const resultContainer = $('#result-textarea');
 
 // Initiate a modal function to toggle progressing info
@@ -24,20 +25,16 @@ const handleSuccess = (data) => {
   processingModal.hide();
   const { songs } = data; // const songs = data.songs;
 
-  $('#result-textarea').val($.map(songs, (link) => `spotify:track:${link}`).join('\n'));
-
+  $('#result-textarea').val($.map(songs, (link) => 'spotify:track:' + link).join('\n'));
   $('#result-container').fadeIn('fast', () => {
     $('#result-textarea').focus();
-
     $('#result-textarea').select();
   });
 };
 
 const handleError = () => {
   processingModal.hide();
-
   $('#error-message').html('<p>Error fetching your data. This may be due wrong username or api connection error.</p><p>Please refresh the page and try again</p>').show();
-
   $('#message-container').fadeIn('fast');
 };
 
@@ -50,7 +47,6 @@ searchForm.submit((e) => {
   e.preventDefault();
   hideContainers();
   processingModal.show();
-
   $.ajax({
     type: 'POST',
     url: '/get-playlist',
@@ -67,6 +63,7 @@ result.on('click', () => {
 
 resultContainer.on('select focus', () => document.execCommand('copy'));
 
-// Enable the popover tooltips:
-
-$('[data-toggle="popover"]').popover();
+// Enable the tooltips
+$(() => {
+  $('[data-toggle="tooltip"]').tooltip();
+});

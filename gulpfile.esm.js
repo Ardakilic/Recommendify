@@ -1,28 +1,37 @@
-const gulp = require('gulp');
-const del = require('del');
-const sass = require('gulp-sass')(require('sass'));
-const postcss = require('gulp-postcss');
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+
 const terser = require('gulp-terser');
+const postcss = require('gulp-postcss');
 
-// @ts-ignore
-const { pipeline } = require('readable-stream');
+const sass = gulpSass(dartSass);
+const {
+  series, parallel, src, dest,
+} = require('gulp');
+const sourcemaps = require('gulp-sourcemaps');
+const del = require('del');
 
-gulp.task('clear', async () => {
-  await del('./dist');
-});
+async function clean() {
+  return del('./dist');
+}
 
-gulp.task('sass', async () => gulp.src('./src/assets/sass/**/*.scss')
-  .pipe(sass())
-  .pipe(postcss())
-  .pipe(gulp.dest('./dist/css')));
+async function scss() {
+  return src('./src/assets/sass/*.scss').pipe(sass()).pipe(postcss()).pipe(dest('./dist/css'));
+}
 
-gulp.task('js', async () => pipeline(
-  gulp.src('src/assets/js/app.js')
-    .pipe(terser()),
-  gulp.dest('./dist/js'),
-));
+async function html() {
+  return src('./src/assets/index.html').pipe(dest('./dist'));
+}
 
-gulp.task('html', async () => gulp.src('./src/assets/index.html')
-  .pipe(gulp.dest('./dist')));
+async function js() {
+  return src('./src/assets/js/*.js')
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(terser())
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('./dist/js/'));
+}
 
-gulp.task('default', gulp.series('clear', gulp.parallel('sass', 'js', 'html')));
+export {
+  clean, scss, js, html,
+};
+export default series(clean, parallel(scss, html, js));

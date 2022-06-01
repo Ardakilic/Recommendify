@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/eslint/bin/eslint .",
+    "lint": "yarn eslint . --fix",
     "build": "gulp default"
   },
   "repository": {
@@ -30,7 +30,9 @@
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.1.0",
+    "jquery": "^3.6.0",
     "playwright": "^1.22.2",
     "postcss": "^8.4.14",
     "readable-stream": "^3.6.0",
@@ -42,6 +44,15 @@
   "devDependencies": {
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.2"
+    "eslint-plugin-import": "^2.25.2",
+    "nodemon": "^2.0.16"
+  },
+  "packageManager": "yarn@3.2.1",
+  "nodemonConfig": {
+    "ext": "js,html,json",
+    "ignore": [
+      "dist/*"
+    ],
+    "exec": "yarn build && yarn start"
   }
 }

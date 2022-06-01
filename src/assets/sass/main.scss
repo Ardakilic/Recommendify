@@ -1,113 +1,38 @@
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  padding-top: 50px;
-  margin-bottom: 150px;
-}
-
-textarea {
-  min-height: 200px;
-  height: 100% !important;
-}
-
-iframe {
-  display: block;
-  width: 100% !important;
-  height: inherit !important;
-}
-
-#header-container {
-  padding: 40px 15px;
-  text-align: center;
-}
-
-#message-container {
-  margin-top: 20px;
-}
-
-#searchform {
-  .input-group {
-    width: 100%;
-  }
-}
-
-.container {
-  padding: 0 15px;
-}
-
-#donation-list {
-  list-style-type: none;
-  padding-left: 0px;
-}
-
-.flex-row {
-  //display: -webkit-flex;
-  //display: inline-flex;
-  height: 450px;
-  //flex-wrap: wrap;
-  display: table;
-  width: 100%;
-}
-
-.flex-col {
-  //-webkit-flex: 1;
-  //-ms-flex: 1;
-  //flex: 1;
-  height: inherit;
-  min-width: 300px;
-  //display: table-cell;
-  margin: 20px 0 20px 0;
-}
-
 .fa-coffee {
-  color: #964B00;
+    color: #964B00;
 }
 
 .fa-github {
-  color: #333;
+    color: #333;
 }
 
 .fa-lastfm {
-  color: #c3000d;
+    color: #c3000d;
 }
 
 .fa-spotify {
-  color: #7ab800;
+    color: #7ab800;
 }
 
 .fa-js {
-  color: #FAC552;
+    color: #FAC552;
 }
 
 .fa-node-js {
-  color: #3C873A;
+    color: #3C873A;
 }
 
-.fa-github, .fa-lastfm, .fa-spotify, .fa-js, .fa-node-js {
-  vertical-align: middle;
+.fa-github,
+.fa-lastfm,
+.fa-spotify,
+.fa-js,
+.fa-node-js {
+    vertical-align: middle;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #f5f5f5;
-
-  .col-xs-12 {
-    margin: 15px 0;
-    text-align: center;
-
-    @media only screen and (min-width: 768px) {
-      text-align: left;
-    }
-
-    &.pull-right {
-      @media only screen and (min-width: 768px) {
-        text-align: right;
-      }
-    }
-  }
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
 }

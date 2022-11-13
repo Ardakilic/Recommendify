@@ -32,7 +32,7 @@
     "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.2",
     "uglify-es": "^3.3.9",
-    "readable-stream": "^3.6.0",
+    "readable-stream": "^4.0.0",
     "eslint": "^8.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-config-eser": "^2.1.9"

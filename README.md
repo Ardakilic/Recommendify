@@ -1,6 +1,14 @@
 Recommendify²
 --------
 
+## UPDATE
+
+You can finally achieve what this tool offers from last.fm directly. Please see my comment here: https://github.com/Ardakilic/Recommendify/issues/69#issuecomment-813014418
+
+So this tool becomes obsolete.
+
+--------
+
 A service that makes Spotify playlists from Last.fm user recommendations.
 
 With this tool, you can generate
